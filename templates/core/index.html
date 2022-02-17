@@ -1,7 +1,56 @@
-<html>
-    <head>
-    </head>
-    <body>
-        <h1>Welcome to News API</h1>
-    </body>
-    </html>
+{% extends 'base.html' %}
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <h3 class="text-center text-success">Search City Temperature Here </h3>
+            <form action="." method="POST">
+                {% csrf_token %}
+                {{ form }}
+                <div>
+
+                </div>
+                <button type="submit" class="btn btn-block btn-outline-success mt-2">Submit</button>
+            
+              </form>
+        </div>
+        
+    </row>
+</div>
+
+
+<div class="container py-5">
+    
+    
+    <div class="row justify-content-center">
+        {% for headline in top_headlines %}
+      <div class="col-lg-3 pb-3">
+        <div class="card">
+            <img src="..." class="card-img-top" alt="...">
+            
+            <div class="card-body">
+              <h4 class="card-title text-center">{{ headline.name }}</h4>
+              <p class="card-text text-justify">{{ headline.description }}</p>
+              <p>Category: {{ headline.category }} </p>
+        <p>Language: {{ headline.language }} </p>
+        <p>Country: {{ headline.country }} </p>
+        <a class="btn btn-outline-info">Read More</a>
+            </div>
+          </div>
+        
+        
+      </div>
+      {% endfor %}
+    </div>
+   
+   
+    
+    
+    
+  </div>
+
+  
+
+  
+
+{% endblock content %}

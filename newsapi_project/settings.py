@@ -130,4 +130,4 @@ MEDIA_ROOT = BASE_DIR/"media"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #news api key
-API_KEY = config('NEWSAPI_KEY')
+NEWS_API_KEY = config('NEWSAPI_KEY')
